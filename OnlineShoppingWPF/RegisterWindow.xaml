@@ -1,0 +1,54 @@
+﻿<Window x:Class="OnlineShoppingWPF.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnlineShoppingWPF"
+        mc:Ignorable="d"
+        Title="RegisterWindow" Height="250" Width="400">
+    <Grid>
+        <StackPanel Background="darkgray" Visibility="Visible">
+            <Label HorizontalAlignment="Center" FontSize="11" Foreground="Blue">Are you a customer or an employee?</Label>
+            <Button Margin="5 5 5 5" x:Name="customerButton" Click="customerButton_Click">Customer</Button>
+            <Button Margin="5 5 5 5" x:Name="employeeButton" Click="employeeButton_Click">Employee</Button>
+        </StackPanel>
+        
+        <Grid x:Name="customerRegistration" Background="gray" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <Label Margin="0 3">Name:</Label>
+                <Label Margin="0 3">Password:</Label>
+                <Label Margin="0 3">Email:</Label>
+                <Label Margin="0 3">Address:</Label>
+                <Label Margin="0 3">Postal Code:</Label>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <TextBox  x:Name="customerNameTextBox" Margin="0 8 5 5"></TextBox>
+                <TextBox x:Name="customerPasswordTextBox" Margin="0 8 5 5"></TextBox>
+                <TextBox x:Name="customerEmailTextBox" Margin="0 6 5 5"></TextBox>
+                <TextBox x:Name="customerAddressTextBox" Margin="0 7 5 5"></TextBox>
+                <TextBox x:Name="customerPostalCodeTextBox" Margin="0 5 5 5"></TextBox>
+                <Button x:Name="customerFinalRegisterButton" Margin="0 0 5 5" Click="customerFinalRegisterButton_Click">Register</Button>
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="employeeRegistration" Background="gray" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <Label Margin="0 3">Name:</Label>
+                <Label Margin="0 3">Password:</Label>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <TextBox x:Name="employeeNameTextBox" Margin="0 8 5 5"></TextBox>
+                <TextBox x:Name="employeePasswordTextBox" Margin="0 8 5 5"></TextBox>
+                <Button x:Name="employeeFinalRegisterButton" Margin="0 0 5 5" Click="employeeFinalRegisterButton_Click">Register</Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
