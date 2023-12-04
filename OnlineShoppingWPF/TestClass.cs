@@ -8,6 +8,7 @@ namespace OnlineShoppingWPF
 {
     internal class TestClass
     {
-        //Testing testing
+        // Testing testing
+        // Testing another line
     }
 }
