@@ -126,7 +126,7 @@ namespace OnlineShoppingWPF
                         customers.Add(customer);
                         availableCustomersListBox.Items.Add(customer);
                     }
-                    else //123
+                    else
                     {
                         Console.WriteLine($"Invalid postal code: {strings[4]}");
                     }
