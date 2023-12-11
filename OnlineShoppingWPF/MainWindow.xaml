@@ -60,19 +60,19 @@
             </Grid>
             <DockPanel Grid.Column="1" Grid.Row="0">
                 <Border CornerRadius="6" BorderBrush="Gray" Background="Transparent" BorderThickness="2" DockPanel.Dock="Top">
-            <StackPanel  Grid.Column="1" Grid.Row="0" Margin="20 20 20 20">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                    <StackPanel  Grid.Column="1" Grid.Row="0" Margin="20 20 20 20">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
                             <TextBlock x:Name="usernameTextBox" Grid.Column="1" Background="LightBlue" Width="100" HorizontalAlignment="Right" Margin="0,-3,0,0" VerticalAlignment="Top" ></TextBlock>
-                    <PasswordBox x:Name="passwordBox" Grid.Column="1" Background="LightBlue" Width="100" HorizontalAlignment="Right" Margin="0,0,0,42" VerticalAlignment="Bottom" RenderTransformOrigin="0.482,-0.477" ></PasswordBox>
-                    <Label HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.836,0.603" Margin="0,-8,0,0">Username</Label>
-                    <Label HorizontalAlignment="Left" Margin="25,22,0,38">Password</Label>
-                    <Button x:Name="loginButton2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="20" Click="loginButton2_Click">Login</Button>
-                </Grid>
-            </StackPanel>
+                            <PasswordBox x:Name="passwordBox" Grid.Column="1" Background="LightBlue" Width="100" HorizontalAlignment="Right" Margin="0,0,0,42" VerticalAlignment="Bottom" RenderTransformOrigin="0.482,-0.477" ></PasswordBox>
+                            <Label HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.836,0.603" Margin="0,-8,0,0">Username</Label>
+                            <Label HorizontalAlignment="Left" Margin="25,22,0,38">Password</Label>
+                            <Button x:Name="loginButton2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="20" Click="loginButton2_Click">Login</Button>
+                        </Grid>
+                    </StackPanel>
                 </Border>
             </DockPanel>
 
@@ -90,22 +90,23 @@
                 </Grid>
                 <Label x:Name="removeCustomerLabel" Height="38"  Foreground="Black" Width="120" Content="" RenderTransformOrigin="0.014,0.797"/>
             </StackPanel>
-        
 
-        <StackPanel Grid.Column="0" Grid.RowSpan="3">
-            <Button x:Name="showAvailableEmployeesButton" Margin="5 5 0 0" HorizontalAlignment="right" VerticalAlignment="Top" Click="showAvailableEmployeesButton_Click" RenderTransformOrigin="0.51,0.503">See available employees</Button>
-            <ListBox x:Name="availableEmployeesListBox" Margin="5" Width="165" Height="150" HorizontalAlignment="Left" Grid.RowSpan="2" Background="LightSteelBlue"  Foreground="White" SelectionChanged="AvailableEmployeesListBox_SelectionChanged" Visibility="Collapsed"/>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Button x:Name="removeEmployeeButton" Grid.Column="1" Grid.ColumnSpan="2" Width="80" Content="Remove User" Click="removeEmployeeButton_Click" Visibility="Collapsed"/>
-            </Grid>
-            <Label x:Name="removeEmployeeLabel" Height="38"  Foreground="Black" Width="120" Content="" RenderTransformOrigin="0.014,0.797"/>
-        </StackPanel>
+
+            <StackPanel Grid.Column="0" Grid.RowSpan="3">
+                <Button x:Name="showAvailableEmployeesButton" Margin="5 5 0 0" HorizontalAlignment="right" VerticalAlignment="Top" Click="showAvailableEmployeesButton_Click" RenderTransformOrigin="0.51,0.503">See available employees</Button>
+                <ListBox x:Name="availableEmployeesListBox" Margin="5" Width="165" Height="150" HorizontalAlignment="Left" Grid.RowSpan="2" Background="LightSteelBlue"  Foreground="White" SelectionChanged="AvailableEmployeesListBox_SelectionChanged" Visibility="Collapsed"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="removeEmployeeButton" Grid.Column="1" Grid.ColumnSpan="2" Width="80" Content="Remove User" Click="removeEmployeeButton_Click" Visibility="Collapsed"/>
+                </Grid>
+                <Label x:Name="removeEmployeeLabel" Height="38"  Foreground="Black" Width="120" Content="" RenderTransformOrigin="0.014,0.797"/>
+            </StackPanel>
         </Grid>
+        <Button Content="StorePage" HorizontalAlignment="Left" Margin="56,150,0,0" VerticalAlignment="Top" Height="53" Width="93" Click="Button_Click"/>
     </Grid>
 </Window>

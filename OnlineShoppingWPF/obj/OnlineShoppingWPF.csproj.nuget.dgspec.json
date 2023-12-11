@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Source\\Repos\\OnlineShoppingWPF\\OnlineShoppingWPF\\OnlineShoppingWPF.csproj": {}
+    "C:\\Users\\moehe\\Personal documents\\GitHubStuff\\OnlineShoppingWPF\\OnlineShoppingWPF\\OnlineShoppingWPF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Source\\Repos\\OnlineShoppingWPF\\OnlineShoppingWPF\\OnlineShoppingWPF.csproj": {
+    "C:\\Users\\moehe\\Personal documents\\GitHubStuff\\OnlineShoppingWPF\\OnlineShoppingWPF\\OnlineShoppingWPF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Source\\Repos\\OnlineShoppingWPF\\OnlineShoppingWPF\\OnlineShoppingWPF.csproj",
+        "projectUniqueName": "C:\\Users\\moehe\\Personal documents\\GitHubStuff\\OnlineShoppingWPF\\OnlineShoppingWPF\\OnlineShoppingWPF.csproj",
         "projectName": "OnlineShoppingWPF",
-        "projectPath": "C:\\Users\\Admin\\Source\\Repos\\OnlineShoppingWPF\\OnlineShoppingWPF\\OnlineShoppingWPF.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Source\\Repos\\OnlineShoppingWPF\\OnlineShoppingWPF\\obj\\",
+        "projectPath": "C:\\Users\\moehe\\Personal documents\\GitHubStuff\\OnlineShoppingWPF\\OnlineShoppingWPF\\OnlineShoppingWPF.csproj",
+        "packagesPath": "C:\\Users\\moehe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\moehe\\Personal documents\\GitHubStuff\\OnlineShoppingWPF\\OnlineShoppingWPF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\moehe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

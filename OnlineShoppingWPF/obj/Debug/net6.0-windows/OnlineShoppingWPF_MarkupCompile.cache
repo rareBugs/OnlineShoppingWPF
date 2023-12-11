@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Mohammed Bekler\Source\Repos\OnlineShoppingWPF\OnlineShoppingWPF\obj\Debug\net6.0-windows\
+C:\Users\moehe\Personal documents\GitHubStuff\OnlineShoppingWPF\OnlineShoppingWPF\obj\Debug\net6.0-windows\
 OnlineShoppingWPF
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\Mohammed Bekler\Source\Repos\OnlineShoppingWPF\OnlineShoppingWPF\App.xaml
-2582614379
+C:\Users\moehe\Personal documents\GitHubStuff\OnlineShoppingWPF\OnlineShoppingWPF\App.xaml
+51040988029
 
-8-713716623
-194183970531
-MainWindow.xaml;RegisterWindow.xaml;
+111579585558
+194-2067936865
+MainWindow.xaml;RegisterWindow.xaml;WindowAccount.xaml;WindowCart.xaml;WindowStore.xaml;
 
 False
 

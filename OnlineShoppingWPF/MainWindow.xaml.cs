@@ -233,6 +233,10 @@ namespace OnlineShoppingWPF
             Application.Current.Shutdown();
         }
 
-
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            WindowStore windowStore = new WindowStore();
+            windowStore.Show();
+        }
     }
 }

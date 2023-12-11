@@ -1,0 +1,64 @@
+﻿<!-- WindowAccount.xaml -->
+<Window x:Class="OnlineShoppingWPF.WindowAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Account" Height="400" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Left side buttons -->
+        <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Account Page" FontSize="25" FontWeight="Bold" Margin="0,0,0,20"/>
+            <!-- Change Address -->
+            <Button Content="Change Address" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" Click="ChangeAddressButton_Click"/>
+            <!-- Check Wallet -->
+            <Button Content="Check Wallet" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" Click="CheckWalletButton_Click"/>
+            <!-- Add Funds to Wallet -->
+            <Button Content="Add Funds to Wallet" FontSize="16" FontWeight="Bold" Click="AddFundsButton_Click"/>
+        </StackPanel>
+
+
+        <!-- Right side hidden, pops up with left side buttons -->
+        <Grid x:Name="RightSideGrid" Grid.Row="2" Grid.Column="3" Background="LightGray" Visibility="Collapsed">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <!-- Change Address code -->
+                <StackPanel x:Name="ChangeAddressSection" Visibility="Collapsed">
+                    <TextBlock Text="Change Address" FontSize="18" FontWeight="Bold" Margin="0,0,0,20"/>
+                    <TextBox Text="New Address" Margin="0,0,0,10"/>
+                    <Button Content="Save" Click="SaveChangeAddress_Click"/>
+                </StackPanel>
+                <!-- Check Wallet code -->
+                <StackPanel x:Name="CheckWalletSection" Visibility="Collapsed">
+                    <TextBlock Text="Check Wallet" FontSize="18" FontWeight="Bold" Margin="0,0,0,20"/>
+                    <TextBlock Text="Wallet Balance: {saldokodsaknas}" Margin="0,0,0,10"/>
+                </StackPanel>
+                <!-- Add Funds code -->
+                <StackPanel x:Name="AddFundsSection" Visibility="Collapsed">
+                    <TextBlock Text="Add Funds to Wallet" FontSize="18" FontWeight="Bold" Margin="0,0,0,20"/>
+                    <TextBox Text="Enter Amount" Margin="0,0,0,10"/>
+                    <Button Content="Add to Wallet" Click="AddToWallet_Click"/>
+                </StackPanel>
+            </StackPanel>
+            
+            
+        </Grid>
+
+        <!-- Exit account button -->
+        <Button Content="Exit account page" Grid.Column="1" Grid.Row="3"
+                HorizontalAlignment="Left" VerticalAlignment="Center" Click="ButtonCloseProgram_Click"/>
+    </Grid>
+</Window>
