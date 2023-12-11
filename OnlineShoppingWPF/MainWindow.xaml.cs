@@ -48,18 +48,18 @@ namespace OnlineShoppingWPF
             {
                 if (customer.Name == username && customer.Password == password)
                 {
-                    
-                }
-                else
-                    foreach (Employee employee in employees)
-                    {
-                        if (employee.Name == username && employee.Password == password)
-                        {
-                            ProductManagmentWindow productManagmentWindow = new ProductManagmentWindow();
-                            productManagmentWindow.Show();
-                        }
 
-                    }
+                }
+            }
+            foreach (Employee employee in employees)
+            {
+                if (employee.Name == username && employee.Password == password)
+                {
+                    ProductManagmentWindow productManagmentWindow = new ProductManagmentWindow();
+                    productManagmentWindow.Show();
+                }
+
+                    
             }
         }
         private void browseAsGuestButton_Click(object sender, RoutedEventArgs e)
