@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Admin\Source\Repos\OnlineShoppingWPF\OnlineShoppingWPF\App.xaml
-2582614379
+3-1295585782
 
-10-1858888469
+12-1236322348
 194-1325968647
-MainWindow.xaml;RegisterWindow.xaml;
+MainWindow.xaml;ProductManagmentWindow.xaml;RegisterWindow.xaml;
 
-False
+True
 

@@ -48,21 +48,24 @@ namespace OnlineShoppingWPF
             {
                 if (customer.Name == username && customer.Password == password)
                 {
-                    //Customer window
+                    ProductManagmentWindow productManagmentWindow = new ProductManagmentWindow();
+                    productManagmentWindow.Show();
                 }
                 else
                     foreach (Employee employee in employees)
                     {
                         if (employee.Name == username && employee.Password == password)
                         {
-                            //Employee window
+                            ProductManagmentWindow productManagmentWindow = new ProductManagmentWindow();
+                            productManagmentWindow.Show();
                         }
                     }
             }
         }
         private void browseAsGuestButton_Click(object sender, RoutedEventArgs e)
         {
-            //ny ruta. titta på produkter utan att kunna "köpa"?
+            ProductManagmentWindow productManagmentWindow = new ProductManagmentWindow();
+            productManagmentWindow.Show();
         }
 
         private void showAvailableCustomersButton_Click(object sender, RoutedEventArgs e)
