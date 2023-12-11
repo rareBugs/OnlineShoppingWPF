@@ -20,7 +20,7 @@ namespace OnlineShoppingWPF
     /// </summary>
     public partial class WindowAccount : Window
     {
-        public WindowAccount()
+        public WindowAccount() // new comment for push
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
