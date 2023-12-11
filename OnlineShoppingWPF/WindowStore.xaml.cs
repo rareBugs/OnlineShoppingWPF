@@ -19,6 +19,7 @@ namespace OnlineShoppingWPF
     /// </summary>
     public partial class WindowStore : Window
     {
+        // PLEASE DON'T CRASH
         public WindowStore()
         {
             InitializeComponent();
