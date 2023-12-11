@@ -59,6 +59,7 @@ namespace OnlineShoppingWPF
                             ProductManagmentWindow productManagmentWindow = new ProductManagmentWindow();
                             productManagmentWindow.Show();
                         }//hej hej HOPP HOPP
+                        //LAST TEST
                     }
             }
         }
