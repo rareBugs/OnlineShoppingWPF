@@ -70,3 +70,10 @@ C:\Users\moehe\Personal documents\GitHubStuff\OnlineShoppingWPF\OnlineShoppingWP
 C:\Users\moehe\Personal documents\GitHubStuff\OnlineShoppingWPF\OnlineShoppingWPF\obj\Debug\net6.0-windows\WindowAccount.g.cs
 C:\Users\moehe\Personal documents\GitHubStuff\OnlineShoppingWPF\OnlineShoppingWPF\obj\Debug\net6.0-windows\WindowCart.g.cs
 C:\Users\moehe\Personal documents\GitHubStuff\OnlineShoppingWPF\OnlineShoppingWPF\obj\Debug\net6.0-windows\WindowCart.baml
+C:\Users\Mohammed Bekler\source\repos\OnlineShoppingWPF\OnlineShoppingWPF\obj\Debug\net6.0-windows\WindowAccount.baml
+C:\Users\Mohammed Bekler\source\repos\OnlineShoppingWPF\OnlineShoppingWPF\obj\Debug\net6.0-windows\WindowAccount.g.cs
+C:\Users\Mohammed Bekler\source\repos\OnlineShoppingWPF\OnlineShoppingWPF\obj\Debug\net6.0-windows\WindowCart.g.cs
+C:\Users\Mohammed Bekler\source\repos\OnlineShoppingWPF\OnlineShoppingWPF\obj\Debug\net6.0-windows\WindowStore.g.cs
+C:\Users\Mohammed Bekler\source\repos\OnlineShoppingWPF\OnlineShoppingWPF\obj\Debug\net6.0-windows\WindowCart.baml
+C:\Users\Mohammed Bekler\source\repos\OnlineShoppingWPF\OnlineShoppingWPF\obj\Debug\net6.0-windows\WindowStore.baml
+C:\Users\Mohammed Bekler\source\repos\OnlineShoppingWPF\OnlineShoppingWPF\obj\Debug\net6.0-windows\OnlineShoppingWPF.sourcelink.json

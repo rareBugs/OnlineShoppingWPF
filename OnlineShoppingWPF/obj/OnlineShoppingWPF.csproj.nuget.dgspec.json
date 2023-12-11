@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\moehe\\Personal documents\\GitHubStuff\\OnlineShoppingWPF\\OnlineShoppingWPF\\OnlineShoppingWPF.csproj": {}
+    "C:\\Users\\Mohammed Bekler\\source\\repos\\OnlineShoppingWPF\\OnlineShoppingWPF\\OnlineShoppingWPF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\moehe\\Personal documents\\GitHubStuff\\OnlineShoppingWPF\\OnlineShoppingWPF\\OnlineShoppingWPF.csproj": {
+    "C:\\Users\\Mohammed Bekler\\source\\repos\\OnlineShoppingWPF\\OnlineShoppingWPF\\OnlineShoppingWPF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\moehe\\Personal documents\\GitHubStuff\\OnlineShoppingWPF\\OnlineShoppingWPF\\OnlineShoppingWPF.csproj",
+        "projectUniqueName": "C:\\Users\\Mohammed Bekler\\source\\repos\\OnlineShoppingWPF\\OnlineShoppingWPF\\OnlineShoppingWPF.csproj",
         "projectName": "OnlineShoppingWPF",
-        "projectPath": "C:\\Users\\moehe\\Personal documents\\GitHubStuff\\OnlineShoppingWPF\\OnlineShoppingWPF\\OnlineShoppingWPF.csproj",
-        "packagesPath": "C:\\Users\\moehe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\moehe\\Personal documents\\GitHubStuff\\OnlineShoppingWPF\\OnlineShoppingWPF\\obj\\",
+        "projectPath": "C:\\Users\\Mohammed Bekler\\source\\repos\\OnlineShoppingWPF\\OnlineShoppingWPF\\OnlineShoppingWPF.csproj",
+        "packagesPath": "C:\\Users\\Mohammed Bekler\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mohammed Bekler\\source\\repos\\OnlineShoppingWPF\\OnlineShoppingWPF\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\moehe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mohammed Bekler\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +62,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
