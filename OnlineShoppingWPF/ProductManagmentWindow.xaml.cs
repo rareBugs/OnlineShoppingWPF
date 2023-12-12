@@ -19,9 +19,10 @@ namespace OnlineShoppingWPF
     /// </summary>
     public partial class ProductManagmentWindow : Window
     {
-        private List<Product> products = new List<Product>();
+        private List<Product> products;
         public ProductManagmentWindow()
         {
+            products = Store.Instance.products;
             InitializeComponent();
 
             //This is a Line!!!!!
@@ -96,6 +97,12 @@ namespace OnlineShoppingWPF
             {
                 selectedProduct = products[listOfProducts.SelectedIndex];
             }
+        }
+
+        private void OpenInventory_Click(object sender, RoutedEventArgs e)
+        {
+            WindowInventory windowInventory = new WindowInventory();
+            windowInventory.Show();
         }
     }
 }

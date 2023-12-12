@@ -22,12 +22,14 @@ namespace OnlineShoppingWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Customer> customers = new List<Customer>();
-        List<Employee> employees = new List<Employee>();
+        List<Customer> customers;
+        List<Employee> employees;
         string username = "NBI";
         string password = "password";
         public MainWindow()
         {
+            customers = Store.Instance.customers;
+            employees = Store.Instance.employees;
             InitializeComponent();
         }
         string customerPath = "SavedCustomers.csv";
