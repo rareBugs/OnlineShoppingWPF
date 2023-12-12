@@ -64,10 +64,15 @@ namespace OnlineShoppingWPF
         private void customerFinalRegisterButton_Click(object sender, RoutedEventArgs e)
         {
             string postalCodeText = customerPostalCodeTextBox.Text;
+            string moneyText = customerMoneyTextBox.Text;
 
             if (string.IsNullOrWhiteSpace(postalCodeText) || !int.TryParse(postalCodeText, out int postalCode))
             {
                 MessageBox.Show("Please enter a valid postal code.", "Invalid Postal Code", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else if (string.IsNullOrWhiteSpace(moneyText) || !int.TryParse(moneyText, out int money))
+            {
+                MessageBox.Show("Please enter your amount of money in numbers", "Invalid money amount input", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {
@@ -88,7 +93,8 @@ namespace OnlineShoppingWPF
                         customerPassword,
                         customerEmail,
                         customerAddress,
-                        postalCode);
+                        postalCode,
+                        money);
 
                     using (StreamWriter writer = new StreamWriter(customerPath))
                     {

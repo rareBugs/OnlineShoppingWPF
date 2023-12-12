@@ -11,13 +11,16 @@ namespace OnlineShoppingWPF
         public string Address { get; set; }
         public int PostalCode { get; set; }
         public string Email { get; set; }
-        public Customer(string name, string password, string email, string address, int postalCode): base(name, password) 
+
+        public int Money { get; set; }
+        public Customer(string name, string password, string email, string address, int postalCode, int money): base(name, password) 
         {
             Name = name.ToLower();
             Password = password.ToLower();
             Email = email.ToLower();
             Address = address.ToLower();
             PostalCode = postalCode;
+            Money = money;
         }
 
         public override string ToString()
@@ -26,7 +29,7 @@ namespace OnlineShoppingWPF
         }
         public string GetCSV()
         {
-            return Name + "," + Password + "," + Email + "," + Address + "," + PostalCode;
+            return Name + "," + Password + "," + Email + "," + Address + "," + PostalCode + "," + Money;
         }
 
     }

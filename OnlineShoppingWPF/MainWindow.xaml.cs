@@ -116,21 +116,28 @@ namespace OnlineShoppingWPF
                 while (line != null)
                 {
                     string[] strings = line.Split(",");
-                    string name = strings[0];
-                    string password = strings[1];
-                    string email = strings[2];
-                    string address = strings[3];
-                    if (int.TryParse(strings[4], out int postalCode))
+                    if (strings.Length >= 6)
                     {
-                        Customer customer = new Customer(name, password, email, address, postalCode);
-                        customers.Add(customer);
-                        availableCustomersListBox.Items.Add(customer);
+                        string name = strings[0];
+                        string password = strings[1];
+                        string email = strings[2];
+                        string address = strings[3];
+                        if (int.TryParse(strings[4], out int postalCode) && int.TryParse(strings[5], out int money))
+                        {
+                            Customer customer = new Customer(name, password, email, address, postalCode, money);
+                            customers.Add(customer);
+                            availableCustomersListBox.Items.Add(customer);
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Invalid postal code or money: {strings[4]}");
+                        }
                     }
                     else
                     {
-                        Console.WriteLine($"Invalid postal code: {strings[4]}");
+                        Console.WriteLine($"Invalid input format: {line}");
                     }
-                    line = reader.ReadLine();
+                        line = reader.ReadLine();
                 }
             }
         }
@@ -173,12 +180,12 @@ namespace OnlineShoppingWPF
             availableEmployeesListBox.Items.Add(newEmployee);
             availableEmployeesListBox.Items.Refresh();
         }
-        public void RegisterCustomer(string name, string password, string email, string address, int postalCode)
+        public void RegisterCustomer(string name, string password, string email, string address, int postalCode, int money)
         {
             this.Name = name;
             this.password = password;
 
-            Customer newCustomer = new Customer(name, password, email, address, postalCode);
+            Customer newCustomer = new Customer(name, password, email, address, postalCode, money);
             customers.Add(newCustomer);
             availableCustomersListBox.Items.Add(newCustomer);
             availableCustomersListBox.Items.Refresh();

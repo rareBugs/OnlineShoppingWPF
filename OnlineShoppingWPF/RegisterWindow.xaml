@@ -19,11 +19,12 @@
                 <ColumnDefinition Width="1.5*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
-                <Label Margin="0 3">Name:</Label>
-                <Label Margin="0 3">Password:</Label>
-                <Label Margin="0 3">Email:</Label>
-                <Label Margin="0 3">Address:</Label>
-                <Label Margin="0 3">Postal Code:</Label>
+                <Label Margin="0 2">Name:</Label>
+                <Label Margin="0 2">Password:</Label>
+                <Label Margin="0 2">Email:</Label>
+                <Label Margin="0 2">Address:</Label>
+                <Label Margin="0 2">Postal Code:</Label>
+                <Label Margin="0 2" >Money deposit</Label>
             </StackPanel>
             <StackPanel Grid.Column="1">
                 <TextBox  x:Name="customerNameTextBox" Margin="0 8 5 5"></TextBox>
@@ -31,7 +32,8 @@
                 <TextBox x:Name="customerEmailTextBox" Margin="0 6 5 5"></TextBox>
                 <TextBox x:Name="customerAddressTextBox" Margin="0 7 5 5"></TextBox>
                 <TextBox x:Name="customerPostalCodeTextBox" Margin="0 5 5 5"></TextBox>
-                <Button x:Name="customerFinalRegisterButton" Margin="0 0 5 5" Click="customerFinalRegisterButton_Click">Register</Button>
+                <TextBox x:Name="customerMoneyTextBox" Margin="0 5 5 5"/>
+                <Button x:Name="customerFinalRegisterButton" Margin="0 0 5 5" Click="customerFinalRegisterButton_Click" RenderTransformOrigin="0.504,0.563" Width="232">Register</Button>
             </StackPanel>
         </Grid>
 
