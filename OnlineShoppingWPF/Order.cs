@@ -72,7 +72,7 @@ namespace OnlineShoppingWPF
 
                 foreach (var product in Products)
                 {
-                    writer.WriteLine($"{product.ProductName},{product.Quantity},{product.Price},{product.Category},{product.Id}");
+                    writer.WriteLine($"{product.Name},{product.Quantity},{product.Price},{product.Category},{product.Id}");
                 }
             }
         }
