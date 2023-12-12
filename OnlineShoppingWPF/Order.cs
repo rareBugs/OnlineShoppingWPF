@@ -61,7 +61,7 @@ namespace OnlineShoppingWPF
 
             foreach (var product in Products)
             {
-                Console.WriteLine("- " + product.ProductName + "," + "Quantity: " + product.Quantity + "Price: " + product.Price + "Category: " + product.Category + "ID: " + product.Id);
+                Console.WriteLine("- " + product.Name + "," + "Quantity: " + product.Quantity + "Price: " + product.Price + "Category: " + product.Category + "ID: " + product.Id);
             }
         }
         public void SaveToCSV(string filePath)
