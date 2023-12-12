@@ -48,7 +48,8 @@ namespace OnlineShoppingWPF
             {
                 if (customer.Name == username && customer.Password == password)
                 {
-
+                    WindowStore windowStore = new WindowStore();
+                    windowStore.Show();
                 }
             }
             foreach (Employee employee in employees)
