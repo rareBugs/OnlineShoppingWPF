@@ -22,12 +22,14 @@ namespace OnlineShoppingWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Customer> customers = new List<Customer>();
-        List<Employee> employees = new List<Employee>();
+        List<Customer> customers;
+        List<Employee> employees;
         string username = "NBI";
         string password = "password";
         public MainWindow()
         {
+            customers = Store.Instance.customers;
+            employees = Store.Instance.employees;
             InitializeComponent();
         }
         string customerPath = "SavedCustomers.csv";
@@ -48,7 +50,8 @@ namespace OnlineShoppingWPF
             {
                 if (customer.Name == username && customer.Password == password)
                 {
-
+                    WindowStore windowStore = new WindowStore();
+                    windowStore.Show();
                 }
             }
             foreach (Employee employee in employees)
@@ -130,12 +133,12 @@ namespace OnlineShoppingWPF
                         }
                         else
                         {
-                            Console.WriteLine($"Invalid postal code or money: {strings[4]}");
+                            Console.WriteLine("Invalid postal code or money:" + strings[4]);
                         }
                     }
                     else
                     {
-                        Console.WriteLine($"Invalid input format: {line}");
+                        Console.WriteLine("Invalid input format:" + line);
                     }
                         line = reader.ReadLine();
                 }

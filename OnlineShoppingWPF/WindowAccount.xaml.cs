@@ -65,6 +65,7 @@ namespace OnlineShoppingWPF
                 ChangeAddressSection.Visibility = Visibility.Collapsed;
                 CheckWalletSection.Visibility = Visibility.Collapsed;
                 AddFundsSection.Visibility = Visibility.Collapsed;
+                orderInformationSection.Visibility = Visibility.Collapsed;
 
                 // Show the selected section with fade
                 section.Visibility = Visibility.Visible;
@@ -79,6 +80,24 @@ namespace OnlineShoppingWPF
         private void ButtonCloseProgram_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void orderInformationButton_Click(object sender, RoutedEventArgs e)
+        {
+            RightSideGrid.Visibility = Visibility.Visible;
+            ShowSection(orderInformationSection);
+
+
+        }
+
+        private void orderInformationListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void returnOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

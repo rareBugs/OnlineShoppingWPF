@@ -7,10 +7,8 @@ using System.Windows.Documents;
 
 namespace OnlineShoppingWPF
 {
-    class Product: ProductManagmentWindow
+    public class Product
     {
-        List<Product> products = new List<Product>();
-
        /* Product product = new Product("Alpha Industries", 101, 4500, 350, "Jacket");
         Product product2 = new Product("Dickies", 101, 4500, 350, "Sweater");
         Product product3 = new Product("Disel", 101, 4500, 350, "Pants");*/
