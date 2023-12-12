@@ -131,12 +131,12 @@ namespace OnlineShoppingWPF
                         }
                         else
                         {
-                            Console.WriteLine($"Invalid postal code or money: {strings[4]}");
+                            Console.WriteLine("Invalid postal code or money:" + strings[4]);
                         }
                     }
                     else
                     {
-                        Console.WriteLine($"Invalid input format: {line}");
+                        Console.WriteLine("Invalid input format:" + line);
                     }
                         line = reader.ReadLine();
                 }
