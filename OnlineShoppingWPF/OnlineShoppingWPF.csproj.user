@@ -19,6 +19,9 @@
     <Compile Update="WindowCart.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="WindowInventory.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="WindowStore.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,6 +40,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WindowCart.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WindowInventory.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WindowStore.xaml">
