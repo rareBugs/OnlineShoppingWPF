@@ -19,9 +19,9 @@
             <RowDefinition Height="10*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-
+        
         <!-- Left side buttons -->
-        <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="198">
             <TextBlock Text="Account Page" FontSize="25" FontWeight="Bold" Margin="0,0,0,20"/>
             <!-- Change Address -->
             <Button Content="Change Address" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" Click="ChangeAddressButton_Click"/>
@@ -29,11 +29,13 @@
             <Button Content="Check Wallet" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" Click="CheckWalletButton_Click"/>
             <!-- Add Funds to Wallet -->
             <Button Content="Add Funds to Wallet" FontSize="16" FontWeight="Bold" Click="AddFundsButton_Click"/>
+            <!-- See customers order information -->
+            <Button Content="Order Information" FontSize="16" Margin="0,12" FontWeight="Bold" Click="orderInformationButton_Click"/>
         </StackPanel>
 
 
         <!-- Right side hidden, pops up with left side buttons -->
-        <Grid x:Name="RightSideGrid" Grid.Row="2" Grid.Column="3" Background="LightGray" Visibility="Collapsed">
+        <Grid x:Name="RightSideGrid" Grid.Row="2" Grid.Column="3" Background="LightGray" Visibility="Visible">
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                 <!-- Change Address code -->
                 <StackPanel x:Name="ChangeAddressSection" Visibility="Collapsed">
@@ -52,9 +54,12 @@
                     <TextBox Text="Enter Amount" Margin="0,0,0,10"/>
                     <Button Content="Add to Wallet" Click="AddToWallet_Click"/>
                 </StackPanel>
+                <StackPanel x:Name="orderInformationSection" Visibility="Collapsed">
+                    <ListBox x:Name="orderInformationListBox" Width="150" Height="150" SelectionChanged="orderInformationListBox_SelectionChanged"></ListBox>
+                    <Button x:Name="returnOrderButton" Width="100" HorizontalAlignment="Center" Margin="5 5 5 5" Click="returnOrderButton_Click">Return order</Button>
+                </StackPanel>
             </StackPanel>
-            
-            
+
         </Grid>
 
         <!-- Exit account button -->
