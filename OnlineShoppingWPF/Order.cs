@@ -4,11 +4,24 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace OnlineShoppingWPF
 {
-    class Order
+    public class Order
     {
+        public enum OrderStatus
+        {
+            Processing,
+            Cancelled,
+            ReadyToSend,
+            Delivering,
+            Lost,
+            Delivered,
+            Returning,
+            Returned
+        }
+
         private static int orderCounter = 0001;
 
         public Order()
@@ -19,6 +32,8 @@ namespace OnlineShoppingWPF
 
         public int OrderNumber { get; private set; }
         public List<Product> Products { get; private set; }
+        public OrderStatus Status { get; private set; } = OrderStatus.Processing;
+        
 
         private int GenerateOrderNumber()
         {
@@ -52,7 +67,27 @@ namespace OnlineShoppingWPF
 
         public void AddProduct(Product product)
         {
-            Products.Add(product);
+            if (Status == OrderStatus.Processing)
+            {
+                Products.Add(product);
+            }
+            else
+            {
+                MessageBox.Show("Can't add products to order");
+            }
+        }
+
+        public bool Packaged()
+        {
+            if (Status == OrderStatus.Processing)
+            {
+                Status = OrderStatus.ReadyToSend;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public void DisplayOrderDetails()
         {

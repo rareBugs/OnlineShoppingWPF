@@ -8,9 +8,10 @@ namespace OnlineShoppingWPF
 {
     public sealed class Store
     {
-        public List<Product> products = new List<Product>();
-        public List<Customer> customers = new List<Customer>();
-        public List<Employee> employees = new List<Employee>();
+        public List<Product> products { get; private set; } = new List<Product>();
+        public List<Customer> customers { get; private set; } = new List<Customer>();
+        public List<Employee> employees { get; private set; } = new List<Employee>();
+        public List<Order> orders { get; private set; } = new List<Order>();
 
         // Singleton setup
         private static readonly Store instance = new Store();
