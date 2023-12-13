@@ -24,5 +24,15 @@ namespace OnlineShoppingWPF
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
         }
+
+        private void Checkout_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RemoveItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
