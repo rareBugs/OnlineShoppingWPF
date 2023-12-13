@@ -43,5 +43,56 @@ namespace OnlineShoppingWPF
         {
 
         }
+
+        private void PackageOrder_Click(object sender, RoutedEventArgs e)
+        {
+            Order? order = OrderHistory.SelectedItem as Order;
+            if (order != null)
+            {
+                bool hasAllProducts = true;
+                foreach (var orderProduct in order.Products)
+                {
+                    bool productFound = false;
+                    foreach (var inventoryProduct in Store.Instance.products)
+                    {
+                        if (inventoryProduct.Id == orderProduct.Id && inventoryProduct.Name == orderProduct.Name)
+                        {
+                            productFound = inventoryProduct.Quantity >= orderProduct.Quantity;
+                            break;
+                        }
+                    }
+                    if (!productFound)
+                    {
+                        hasAllProducts = false;
+                        break;
+                    }
+                }
+                if (hasAllProducts)
+                {
+                    if (order.Packaged())
+                    {
+                        foreach (var orderProduct in order.Products)
+                        {
+                            foreach (var inventoryProduct in Store.Instance.products)
+                            {
+                                if (inventoryProduct.Id == orderProduct.Id && inventoryProduct.Name == orderProduct.Name)
+                                {
+                                    inventoryProduct.Quantity -= orderProduct.Quantity;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Order has wrong Status");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Products not in inventory");
+                }
+            }
+        }
     }
 }
