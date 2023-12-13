@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 
@@ -21,7 +22,7 @@ namespace OnlineShoppingWPF
             Quantity = productQuantity;
             Category = productCategory;
         }
-
+        
         public string Name {  get; set; }
         public int Id { get; set; }
         public int Price { get; set; }
