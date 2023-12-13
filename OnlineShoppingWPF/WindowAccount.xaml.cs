@@ -21,6 +21,10 @@ namespace OnlineShoppingWPF
     /// </summary>
     public partial class WindowAccount : Window
     {
+
+
+
+
         public WindowAccount() // new comment for push
         {
             InitializeComponent();
@@ -48,60 +52,45 @@ namespace OnlineShoppingWPF
 
         }
 
-        // Views Funds information box
-        private void AddFundsButton_Click(object sender, RoutedEventArgs e)
-        {
-            RightSideGrid.Visibility = Visibility.Visible;
-            ShowSection(AddFundsSection);
-        }
-
-        // Views Address information box
-        private void ChangeAddressButton_Click(object sender, RoutedEventArgs e)
-        {
-            RightSideGrid.Visibility = Visibility.Visible;
-            ShowSection(ChangeAddressSection);
-        }
-
-        // Views Wallet information box
-        private void CheckWalletButton_Click(object sender, RoutedEventArgs e)
-        {
-            RightSideGrid.Visibility = Visibility.Visible;
-            ShowSection(CheckWalletSection);
-        }
-
-        // Views order information box
-        private void orderInformationButton_Click(object sender, RoutedEventArgs e)
-        {
-            RightSideGrid.Visibility = Visibility.Visible;
-            ShowSection(orderInformationSection);
-        }
-
-        // Very cool fading animations
-        private void ShowSection(StackPanel section)
-        {
-            // fade animation
-            DoubleAnimation fadeOutAnimation = new DoubleAnimation(0, TimeSpan.FromSeconds(0.2));
-            fadeOutAnimation.Completed += (sender, e) =>
-            {
-                // Hide all sections after fade
-                ChangeAddressSection.Visibility = Visibility.Collapsed;
-                CheckWalletSection.Visibility = Visibility.Collapsed;
-                AddFundsSection.Visibility = Visibility.Collapsed;
-                orderInformationSection.Visibility = Visibility.Collapsed;
-
-                // Show the selected section with fade
-                section.Visibility = Visibility.Visible;
-                DoubleAnimation fadeInAnimation = new DoubleAnimation(1, TimeSpan.FromSeconds(0.5));
-                section.BeginAnimation(UIElement.OpacityProperty, fadeInAnimation);
-            };
-            // Start the fade animation
-            section.BeginAnimation(UIElement.OpacityProperty, fadeOutAnimation);
-        }
-
         // Closes window
         private void ButtonCloseProgram_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void textBoxName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void textBoxPassword_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void textBoxEmail_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void textBoxAddress_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void textBoxPostalCode_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void textBoxMoney_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void saveChanges_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

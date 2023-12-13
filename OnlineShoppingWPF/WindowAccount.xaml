@@ -7,8 +7,6 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="30*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="30*"/>
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
 
@@ -19,47 +17,30 @@
             <RowDefinition Height="10*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        
-        <!-- Left side buttons -->
-        <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="198">
-            <TextBlock Text="Account Page" FontSize="25" FontWeight="Bold" Margin="0,0,0,20"/>
-            <!-- Change Address -->
-            <Button Content="Change Address" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" Click="ChangeAddressButton_Click"/>
-            <!-- Check Wallet -->
-            <Button Content="Check Wallet" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" Click="CheckWalletButton_Click"/>
-            <!-- Add Funds to Wallet -->
-            <Button Content="Add Funds to Wallet" FontSize="16" FontWeight="Bold" Click="AddFundsButton_Click"/>
-            <!-- See customers order information -->
-            <Button Content="Order Information" FontSize="16" Margin="0,12" FontWeight="Bold" Click="orderInformationButton_Click"/>
-        </StackPanel>
-
 
         <!-- Right side hidden, pops up with left side buttons -->
-        <Grid x:Name="RightSideGrid" Grid.Row="2" Grid.Column="3" Background="LightGray" Visibility="Visible">
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                <!-- Change Address code -->
-                <StackPanel x:Name="ChangeAddressSection" Visibility="Collapsed">
-                    <TextBlock Text="Change Address" FontSize="18" FontWeight="Bold" Margin="0,0,0,20"/>
-                    <TextBox Text="New Address" Margin="0,0,0,10"/>
-                    <Button Content="Save" Click="SaveChangeAddress_Click"/>
-                </StackPanel>
-                <!-- Check Wallet code -->
-                <StackPanel x:Name="CheckWalletSection" Visibility="Collapsed">
-                    <TextBlock Text="Check Wallet" FontSize="18" FontWeight="Bold" Margin="0,0,0,20"/>
-                    <TextBlock Text="Wallet Balance: {saldokodsaknas}" Margin="0,0,0,10"/>
-                </StackPanel>
-                <!-- Add Funds code -->
-                <StackPanel x:Name="AddFundsSection" Visibility="Collapsed">
-                    <TextBlock Text="Add Funds to Wallet" FontSize="18" FontWeight="Bold" Margin="0,0,0,20"/>
-                    <TextBox Text="Enter Amount" Margin="0,0,0,10"/>
-                    <Button Content="Add to Wallet" Click="AddToWallet_Click"/>
-                </StackPanel>
-                <StackPanel x:Name="orderInformationSection" Visibility="Collapsed">
-                    <ListBox x:Name="orderInformationListBox" Width="150" Height="150" SelectionChanged="orderInformationListBox_SelectionChanged"></ListBox>
-                    <Button x:Name="returnOrderButton" Width="100" HorizontalAlignment="Center" Margin="5 5 5 5" Click="returnOrderButton_Click">Return order</Button>
-                </StackPanel>
+        <Grid Grid.Row="2" Grid.Column="1" x:Name="customerRegistration" Background="gray" Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <Label Margin="0 2">Name:</Label>
+                <Label Margin="0 2">Password:</Label>
+                <Label Margin="0 2">Email:</Label>
+                <Label Margin="0 2">Address:</Label>
+                <Label Margin="0 2">Postal Code:</Label>
+                <Label Margin="0 2" >Money deposit</Label>
             </StackPanel>
-
+            <StackPanel Grid.Column="1">
+                <TextBox  x:Name="textBoxName" Margin="0 8 5 5" TextChanged="textBoxName_TextChanged"/>
+                <TextBox x:Name="textBoxPassword" Margin="0 8 5 5" TextChanged="textBoxPassword_TextChanged"/>
+                <TextBox x:Name="textBoxEmail" Margin="0 6 5 5" TextChanged="textBoxEmail_TextChanged"/>
+                <TextBox x:Name="textBoxAddress" Margin="0 7 5 5" TextChanged="textBoxAddress_TextChanged"/>
+                <TextBox x:Name="textBoxPostalCode" Margin="0 5 5 5" TextChanged="textBoxPostalCode_TextChanged"/>
+                <TextBox x:Name="textBoxMoney" Margin="0 5 5 5" TextChanged="textBoxMoney_TextChanged"/>
+                <Button x:Name="saveChanges" Margin="0 0 5 5" Click="saveChanges_Click" >Save changes</Button>
+            </StackPanel>
         </Grid>
 
         <!-- Exit account button -->
