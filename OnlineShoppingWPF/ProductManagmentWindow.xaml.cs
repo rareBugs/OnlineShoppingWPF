@@ -11,6 +11,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
+using System.Text.Json.Serialization;
+using System.Xml;
+using System.Net.Http.Json;
+using System.Linq.Expressions;
 
 namespace OnlineShoppingWPF
 {
@@ -19,10 +24,10 @@ namespace OnlineShoppingWPF
     /// </summary>
     public partial class ProductManagmentWindow : Window
     {
-        private List<Product> products;
+        private List<Product> Products;
         public ProductManagmentWindow()
         {
-            products = Store.Instance.products;
+            Products = Store.Instance.products;
             InitializeComponent();
 
             //This is a Line!!!!!
@@ -40,7 +45,7 @@ namespace OnlineShoppingWPF
 
             listOfProducts.Items.Clear();
 
-            foreach (var product in products)
+            foreach (var product in Products)
             {
                 listOfProducts.Items.Add($"{product.Name}- Quantity: {product.Quantity}");
             }
@@ -56,7 +61,7 @@ namespace OnlineShoppingWPF
             string productCategory = ProductCategory.Text;
 
             Product newProduct = new Product(productName, productId, productPrice, productQuantity, productCategory);
-            products.Add(newProduct);
+            Products.Add(newProduct);
 
             RefreshProductListView();
         }
@@ -93,9 +98,9 @@ namespace OnlineShoppingWPF
         private Product selectedProduct;
         private void listOfProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (listOfProducts.SelectedIndex >= 0 && listOfProducts.SelectedIndex < products.Count)
+            if (listOfProducts.SelectedIndex >= 0 && listOfProducts.SelectedIndex < Products.Count)
             {
-                selectedProduct = products[listOfProducts.SelectedIndex];
+                selectedProduct = Products[listOfProducts.SelectedIndex];
             }
         }
 
@@ -104,5 +109,32 @@ namespace OnlineShoppingWPF
             WindowInventory windowInventory = new WindowInventory();
             windowInventory.Show();
         }
+
+        private void ChangeProducts_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SaveToCSV_Click(string filePath)
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filePath, false))
+                {
+                    writer.WriteLine("Product Name,Quantity,Price,Category,Id");
+
+                    foreach (var product in Products)
+                    {
+                        writer.WriteLine($"{product.Name},{product.Quantity},{product.Price},{product.Category},{product.Id}");
+                    }
+                }
+                MessageBox.Show("Products Saved Successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error Saving Products: ");
+            }
+        }
+       
     }
 }
