@@ -11,26 +11,39 @@ namespace OnlineShoppingWPF
         public string Address { get; set; }
         public int PostalCode { get; set; }
         public string Email { get; set; }
-
         public int Money { get; set; }
-        public Customer(string name, string password, string email, string address, int postalCode, int money): base(name, password) 
+
+
+        public Customer(string name, string password, string email, string address, int postalCode, int money)
+            : base(name, password)
         {
-            Name = name.ToLower();
-            Password = password.ToLower();
-            Email = email.ToLower();
-            Address = address.ToLower();
+            Email = email;
+            Address = address;
             PostalCode = postalCode;
             Money = money;
         }
+
 
         public override string ToString()
         {
             return Name;
         }
+
+
         public string GetCSV()
         {
-            return Name + "," + Password + "," + Email + "," + Address + "," + PostalCode + "," + Money;
+            return $"{Name},{Password},{Email},{Address},{PostalCode},{Money}";
         }
 
+
+        public void UpdateDetails(string newName, string newPassword, string newEmail, string newAddress, int newPostalCode, int newMoney)
+        {
+            Name = newName;
+            Password = newPassword;
+            Email = newEmail;
+            Address = newAddress;
+            PostalCode = newPostalCode;
+            Money = newMoney;
+        }
     }
 }

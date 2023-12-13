@@ -9,18 +9,16 @@ namespace OnlineShoppingWPF
 {
     public class Employee : Person
     {
-        public Employee(string name, string password) : base(name, password)
-        {
-            Name = name.ToLower();
-            Password = password.ToLower();
-        }
+        public Employee(string name, string password) : base(name, password) { }
+
         public override string ToString()
         {
             return Name;
         }
+
         public string GetCSV()
         {
-            return Name + "," + Password;
+            return $"{Name},{Password}";
         }
     }
 }

@@ -23,6 +23,7 @@ namespace OnlineShoppingWPF
         public WindowInventory()
         {
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
             OrderHistory.ItemsSource = Store.Instance.orders;
             InventoryStock.ItemsSource = Store.Instance.products;

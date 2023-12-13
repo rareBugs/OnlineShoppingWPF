@@ -28,8 +28,8 @@
         <!-- Search bar -->
         <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0">
             <StackPanel Orientation="Horizontal">
-                <TextBox Name="SearchBox" Width="300" Margin="0,0,10,0" VerticalAlignment="Center" />
-                <Button Content="Search" Click="Button_Click_1" />
+                <TextBox Name="SearchBox" Width="300" Margin="0,0,10,0" VerticalAlignment="Center" TextChanged="SearchBox_TextChanged"  />
+                <Button Content="Search" Click="ButtonSearch" />
             </StackPanel>
         </StackPanel>
 
@@ -38,7 +38,7 @@
         <!-- Account button -->
         <Button Name="AccountButton"  Content="Account" Grid.Column="3" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="OpenAccountFromStore_Click"/>
         <!-- Cart and Wishlist buttons -->
-        <Button Content="Cart" Grid.Column="3" Grid.Row="2" VerticalAlignment="Top" Height="20" Width="50" Click="Button_Click" />
+        <Button Content="Cart" Grid.Column="3" Grid.Row="2" VerticalAlignment="Top" Height="20" Width="50" />
         <Button Content="Wishlist" Grid.Column="2" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="20" Width="50"/>
         <!-- Exit button -->
         <Button Content="Exit Store" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="ButtonCloseProgram_Click"/>
@@ -64,7 +64,6 @@
 
         <!-- Main content area with scrollable product items -->
         <ScrollViewer Grid.Row="2" Grid.Column="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-            <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
             <ListBox x:Name="listBoxProductViewer" ItemsSource="{Binding}">
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -80,7 +79,6 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
         </ScrollViewer>
 
 
