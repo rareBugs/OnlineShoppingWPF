@@ -124,11 +124,12 @@ namespace OnlineShoppingWPF
 
         }
 
-        private void SaveToCSV_Click(string filePath)
+        private void SaveToCSV_Click(object sender, RoutedEventArgs e)
         {
+            string filePath = "Products.csv";
             try
             {
-                using (StreamWriter writer = new StreamWriter(filePath, false))
+                using (StreamWriter writer = new StreamWriter(filePath))
                 {
                     writer.WriteLine("Product Name,Quantity,Price,Category,Id");
 
@@ -144,6 +145,10 @@ namespace OnlineShoppingWPF
                 MessageBox.Show($"Error Saving Products: ");
             }
         }
-       
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -27,8 +27,10 @@ namespace OnlineShoppingWPF
             //Opens window in center of screen
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
+            //Vad menas?? """""@@@@@@@@@@@@"""==============
+
             // Gets product data from CSV and displays in store
-            listBoxProductViewer.ItemsSource = ReadDataFromCSV("asd");
+            //listBoxProductViewer.ItemsSource = ReadDataFromCSV("asd");
         }
 
         private void OpenAccountFromStore_Click(object sender, RoutedEventArgs e)

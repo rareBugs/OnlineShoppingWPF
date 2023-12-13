@@ -91,7 +91,7 @@
                 />
             <Button
                 Background="MediumPurple"
-                Click="SaveToCSV_Click"
+                Click="Button_Click"
                 Content="Save Product"
                 Height="20"
                 Width="75"
