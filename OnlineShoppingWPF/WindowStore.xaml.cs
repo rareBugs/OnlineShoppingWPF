@@ -19,7 +19,6 @@ namespace OnlineShoppingWPF
     /// </summary>
     public partial class WindowStore : Window
     {
-        // PLEASE NO MORE MERGE CONFLICTS
         public WindowStore()
         {
             InitializeComponent();
@@ -30,7 +29,7 @@ namespace OnlineShoppingWPF
             //Vad menas?? """""@@@@@@@@@@@@"""==============
 
             // Gets product data from CSV and displays in store
-            //listBoxProductViewer.ItemsSource = ReadDataFromCSV("asd");
+            listBoxProductViewer.ItemsSource = ReadDataFromCSV("asd");
         }
 
         private void OpenAccountFromStore_Click(object sender, RoutedEventArgs e)
@@ -47,7 +46,12 @@ namespace OnlineShoppingWPF
         }
 
         // For reading CSV file to populate (aka display) the store with items
-       
+        private List<Product> ReadDataFromCSV(string filePath)
+        {
+            // read
+            // return
+            // populate
+        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

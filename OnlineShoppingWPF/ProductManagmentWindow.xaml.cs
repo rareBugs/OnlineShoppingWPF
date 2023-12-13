@@ -115,8 +115,9 @@ namespace OnlineShoppingWPF
 
         private void OpenInventory_Click(object sender, RoutedEventArgs e)
         {
+            // Open as a modal window by using ShowDialog
             WindowInventory windowInventory = new WindowInventory();
-            windowInventory.Show();
+            windowInventory.ShowDialog();
         }
 
         private void ChangeProducts_Click(object sender, RoutedEventArgs e)
