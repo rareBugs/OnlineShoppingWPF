@@ -50,6 +50,7 @@ namespace OnlineShoppingWPF
             // read
             // return
             // populate
+            return Store.Instance.products;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
