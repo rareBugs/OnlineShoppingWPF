@@ -11,8 +11,8 @@
         <ListView x:Name="OrderHistory" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="43,73,595,88" SelectionChanged="OrderHistory_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=OrderNumber}" Header="Order" Width="50"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Status}" Header="Status" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding OrderNumber}" Header="Order" Width="50"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Status}" Header="Status" Width="100"/>
                 </GridView>
             </ListView.View>
         </ListView>
@@ -20,7 +20,9 @@
         <ListView x:Name="InventoryStock" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="400,73,205,88" SelectionChanged="InventoryStock_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Id" Width="30"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Quantity}" Header="Quantity" Width="50"/>
                 </GridView>
             </ListView.View>
         </ListView>
@@ -44,7 +46,9 @@
         <ListView x:Name="OrderProducts" HorizontalAlignment="Left" Height="289" Margin="218,73,0,0" VerticalAlignment="Top" Width="164" d:ItemsSource="{d:SampleData ItemCount=5}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Id" Width="30"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Quantity}" Header="Quantity" Width="50"/>
                 </GridView>
             </ListView.View>
         </ListView>

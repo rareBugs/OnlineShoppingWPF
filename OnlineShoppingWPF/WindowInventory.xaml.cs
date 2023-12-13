@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,15 @@ namespace OnlineShoppingWPF
         public WindowInventory()
         {
             InitializeComponent();
+
+            OrderHistory.ItemsSource = Store.Instance.orders;
+            InventoryStock.ItemsSource = Store.Instance.products;
+        }
+
+        public void RefreshLists()
+        {
+            OrderHistory.Items.Refresh();
+            InventoryStock.Items.Refresh();
         }
 
         private void InventoryStock_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -31,7 +41,12 @@ namespace OnlineShoppingWPF
 
         private void OrderHistory_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            OrderProducts.ItemsSource = null;
+            Order? order = OrderHistory.SelectedItem as Order;
+            if (order != null)
+            {
+                OrderProducts.ItemsSource = order.Products;
+            }
         }
 
         private void ViewAvaibleTransport_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -82,6 +97,7 @@ namespace OnlineShoppingWPF
                                 }
                             }
                         }
+                        RefreshLists();
                     }
                     else
                     {

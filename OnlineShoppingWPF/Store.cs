@@ -24,6 +24,16 @@ namespace OnlineShoppingWPF
 
         private Store()
         {
+            // Adding some test data
+            products.Add(new Product("k", 1, 1, 5, "ktype"));
+            products.Add(new Product("l", 2, 1, 15, "ltype"));
+            products.Add(new Product("m", 3, 2, 10, "mtype"));
+            Order test = new Order();
+            test.AddProduct(new Product("k", 1, 0, 1, ""));
+            orders.Add(test);
+            Order test2 = new Order();
+            test2.AddProduct(new Product("m", 3, 0, 1, ""));
+            orders.Add(test2);
         }
 
         public static Store Instance
