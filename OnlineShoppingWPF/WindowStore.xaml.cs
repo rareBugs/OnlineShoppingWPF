@@ -45,12 +45,7 @@ namespace OnlineShoppingWPF
         }
 
         // For reading CSV file to populate (aka display) the store with items
-        private List<Product> ReadDataFromCSV(string filePath)
-        {
-            // read
-            // return
-            // populate
-        }
+       
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

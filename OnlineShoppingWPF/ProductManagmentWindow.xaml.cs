@@ -95,9 +95,18 @@ namespace OnlineShoppingWPF
 
         }
 
-        private Product selectedProduct;
+        private Product selectedProduct = null;
         private void listOfProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Product selectedProduct = listOfProducts.SelectedItem as Product; 
+            if (selectedProduct != null) 
+            {
+                ProductName.Text = selectedProduct.Name;
+                ProductID.Text = selectedProduct.Id.ToString();
+                ProductPrice.Text = selectedProduct.Price.ToString();
+                ProductQuantity.Text = selectedProduct.Quantity.ToString();
+                ProductCategory.Text = selectedProduct.Category.ToString();
+            }
             if (listOfProducts.SelectedIndex >= 0 && listOfProducts.SelectedIndex < Products.Count)
             {
                 selectedProduct = Products[listOfProducts.SelectedIndex];
