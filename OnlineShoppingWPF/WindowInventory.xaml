@@ -6,40 +6,50 @@
         xmlns:local="clr-namespace:OnlineShoppingWPF"
         mc:Ignorable="d"
         Title="WindowInventory" Height="450" Width="800">
-    <Grid Margin="0,0,0,-6">
+    <Grid Margin="0,0,0,-16">
         <Label Content=" Order History" HorizontalAlignment="Left" Margin="43,37,0,0" VerticalAlignment="Top" Width="130" Height="26"/>
-        <ListView x:Name="OrderHistory" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="43,73,562,38" SelectionChanged="OrderHistory_SelectionChanged">
+        <ListView x:Name="OrderHistory" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="43,73,595,88" SelectionChanged="OrderHistory_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=OrderNumber}" Header="Order" Width="50"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Status}" Header="Status" Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Inventory Stock" HorizontalAlignment="Left" Margin="400,37,0,0" VerticalAlignment="Top" Width="101" Height="26"/>
+        <ListView x:Name="InventoryStock" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="400,73,205,88" SelectionChanged="InventoryStock_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="Inventory Stock" HorizontalAlignment="Left" Margin="252,37,0,0" VerticalAlignment="Top" Width="101" Height="26"/>
-        <ListView x:Name="InventoryStock" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="252,73,353,38" SelectionChanged="InventoryStock_SelectionChanged">
+        <Label Content="View Available Transport" Margin="606,37,24,0" VerticalAlignment="Top" Height="26"/>
+        <ListView x:Name="ViewAvailableTransport" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="606,73,54,217" SelectionChanged="ViewAvaibleTransport_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=TransportName}" Header="Name" Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content=" Delivery Status" Margin="606,238,72,176" Height="26"/>
+        <ListView x:Name="DeliveryStatus" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="606,274,54,88" SelectionChanged="DeliveryStatus_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="View Available Transport" Margin="465,37,73,0" VerticalAlignment="Top" Height="26"/>
-        <ListView x:Name="ViewAvailableTransport" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="465,73,54,217" SelectionChanged="ViewAvaibleTransport_SelectionChanged">
+        <Button Content="Send Order" Margin="662,384,54,38" Height="28"/>
+        <ListView x:Name="OrderProducts" HorizontalAlignment="Left" Height="289" Margin="218,73,0,0" VerticalAlignment="Top" Width="164" d:ItemsSource="{d:SampleData ItemCount=5}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content=" Delivery Status" Margin="465,224,213,184" Height="26"/>
-        <ListView x:Name="DeliveryStatus" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="465,274,54,38" SelectionChanged="DeliveryStatus_SelectionChanged">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button Content="send" Margin="662,224,54,184" Height="28"/>
+        <Label Content="Order Products" HorizontalAlignment="Left" Margin="218,37,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="PackageOrder" Content="Package Order" HorizontalAlignment="Left" Margin="498,384,0,0" VerticalAlignment="Top" Click="PackageOrder_Click"/>
 
     </Grid>
 </Window>

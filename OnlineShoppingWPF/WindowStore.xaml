@@ -61,11 +61,11 @@
             </TreeViewItem>
         </TreeView>
 
-        
+
         <!-- Main content area with scrollable product items -->
         <ScrollViewer Grid.Row="2" Grid.Column="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
             <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-            <ListBox ItemsSource="{Binding}">
+            <ListBox x:Name="listBoxProductViewer" ItemsSource="{Binding}">
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel Orientation="Horizontal" />
@@ -82,6 +82,7 @@
             </ListBox>
             <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
         </ScrollViewer>
+
 
     </Grid>
 </Window>
