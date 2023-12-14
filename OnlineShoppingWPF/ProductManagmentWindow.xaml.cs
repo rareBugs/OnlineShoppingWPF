@@ -30,6 +30,7 @@ namespace OnlineShoppingWPF
             Products = Store.Instance.products;
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            RefreshProductListView();
 
             //This is a Line!!!!!
 
@@ -43,14 +44,14 @@ namespace OnlineShoppingWPF
 
         private void RefreshProductListView()
         {
-
-            listOfProducts.Items.Clear();
+            List<string> displayStrings = new List<string>();
 
             foreach (var product in Products)
             {
-                listOfProducts.Items.Add($"{product.Name}- Quantity: {product.Quantity}");
+                displayStrings.Add($"{product.Name}- Quantity: {product.Quantity}");
             }
 
+            listOfProducts.ItemsSource = displayStrings;
         }
 
         private void AddProduct_Click(object sender, RoutedEventArgs e)
@@ -66,7 +67,7 @@ namespace OnlineShoppingWPF
 
             RefreshProductListView();
 
-            listOfProducts.Items.Add($"{newProduct.Name}- Quantity: {newProduct.Quantity}");
+            //listOfProducts.Items.Add($"{newProduct.Name}- Quantity: {newProduct.Quantity}");
         }
 
         private void RemoveProduct_Click(object sender, RoutedEventArgs e)
@@ -128,7 +129,7 @@ namespace OnlineShoppingWPF
 
         }
 
-        private void SaveToCSV_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             string filePath = "Products.csv";
             try
@@ -148,10 +149,6 @@ namespace OnlineShoppingWPF
             {
                 MessageBox.Show($"Error Saving Products: ");
             }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
 
         }
     }

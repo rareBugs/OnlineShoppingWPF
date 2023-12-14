@@ -17,10 +17,10 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
+
         <!-- Lägga till nya produkter (Add New Products)-->
         <StackPanel Margin="10" Grid.RowSpan="2">
-            
+
             <TextBlock 
                 Text="Product Name"
                 />
@@ -57,7 +57,7 @@
                 />
 
         </StackPanel>
-        
+
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5" Grid.Row="1">
 
@@ -78,16 +78,16 @@
                 Click="RemoveProduct_Click"
                 />
         </StackPanel>
-        
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="25" Height="35" Width="275" Grid.Row="1">
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="5" Grid.Row="2">
             <Button
                 Background="CadetBlue"
                 Click="ChangeProducts_Click"
                 Content="Change"
                 Height="20"
                 Width="75"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
+                Margin="15"
+                HorizontalAlignment="Left"
                 />
             <Button
                 Background="MediumPurple"
@@ -95,28 +95,30 @@
                 Content="Save Product"
                 Height="20"
                 Width="75"
+                Margin="15"
+                HorizontalAlignment="Right"
 
                 />
 
         </StackPanel>
-        
+
         <!-- Lista av alla varor -->
-        <StackPanel Grid.Row="1" Grid.RowSpan="2" Height="175" VerticalAlignment="Bottom">
+        <StackPanel Margin="15,99,15,0" Grid.Row="1" Grid.RowSpan="2" Height="130" VerticalAlignment="Top">
             <ListBox
                 Name="listOfProducts"
                 Background="LightGray"
                 BorderThickness="3"
                 Height="115"
-                Margin="15"
+                Margin="5"
                 SelectionChanged="listOfProducts_SelectionChanged"
                 />
         </StackPanel>
-        
+
         <!-- TA BORT OM INTE DEN BEHÖVS-->
         <StackPanel Margin="15" Grid.Column="1">
-            
+
         </StackPanel>
-        
+
         <!-- DagsKasssa och historik på köp -->
         <StackPanel  Width="250" Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Height="150">
             <ListView
@@ -127,7 +129,7 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Bottom"
                 />
-            
+
             <ListView
                 Margin="10"
                 Height="115"
@@ -154,7 +156,7 @@
                  Background="Gray"
                  BorderBrush="AliceBlue"
                 />
-            
+
         </StackPanel>
         <Button x:Name="OpenInventory" Grid.Column="2" Content="Open Inventory" HorizontalAlignment="Left" Margin="161,8,0,0" VerticalAlignment="Top" Click="OpenInventory_Click"/>
     </Grid>
