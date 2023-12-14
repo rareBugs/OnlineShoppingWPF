@@ -89,7 +89,8 @@ namespace OnlineShoppingWPF
                 return false;
             }
         }
-        public void DisplayOrderDetails()
+        //Only a placeholder of a method we want to implement
+       /* public void DisplayOrderDetails()
         {
             Console.WriteLine("Order Number: " + OrderNumber);
             Console.WriteLine("Products in the order:");
@@ -98,7 +99,7 @@ namespace OnlineShoppingWPF
             {
                 Console.WriteLine("- " + product.Name + "," + "Quantity: " + product.Quantity + "Price: " + product.Price + "Category: " + product.Category + "ID: " + product.Id);
             }
-        }
+        }*/
         public void SaveToCSV(string filePath)
         {
             using (StreamWriter writer = new StreamWriter(filePath))

@@ -110,6 +110,8 @@ namespace OnlineShoppingWPF
             {
                 customers.Remove(selectedCustomer);
                 availableCustomersListBox.Items.Remove(selectedCustomer);
+                saveCustomer();
+                availableCustomersListBox.Items.Refresh();
 
                 removeCustomerLabel.Content = "Customer removed";
             }
@@ -244,6 +246,8 @@ namespace OnlineShoppingWPF
             {
                 employees.Remove(selectedEmployee);
                 availableEmployeesListBox.Items.Remove(selectedEmployee);
+                saveEmployee();
+                availableEmployeesListBox.Items.Refresh();
 
                 removeEmployeeLabel.Content = "Employee removed";
             }
@@ -264,6 +268,26 @@ namespace OnlineShoppingWPF
         private void exitButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+        private void saveCustomer()
+        {
+            using (StreamWriter writer = new StreamWriter(customerPath))
+            {
+                foreach (Customer customer in customers)
+                {
+                    writer.WriteLine(customer.GetCSV());
+                }
+            }
+        }
+        private void saveEmployee()
+        {
+            using (StreamWriter writer = new StreamWriter(employeePath))
+            {
+                foreach (Employee employee in employees)
+                {
+                    writer.WriteLine(employee.GetCSV());
+                }
+            }
         }
     }
 }
