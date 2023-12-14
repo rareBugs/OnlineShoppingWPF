@@ -12,6 +12,7 @@ namespace OnlineShoppingWPF
         public List<Customer> customers { get; private set; } = new List<Customer>();
         public List<Employee> employees { get; private set; } = new List<Employee>();
         public List<Order> orders { get; private set; } = new List<Order>();
+        public List<TransportVehicle> transportVehicles { get; private set; } = new List<TransportVehicle>();
 
         // Singleton setup
         private static readonly Store instance = new Store();
@@ -34,6 +35,9 @@ namespace OnlineShoppingWPF
             Order test2 = new Order();
             test2.AddProduct(new Product("m", 3, 0, 1, ""));
             orders.Add(test2);
+            transportVehicles.Add(new TransportVehicle() { Name = "Blue Car" });
+            transportVehicles.Add(new TransportVehicle() { Name = "Yellow Car" });
+            transportVehicles.Add(new TransportVehicle() { Name = "Red Truck" });
         }
 
         public static Store Instance
