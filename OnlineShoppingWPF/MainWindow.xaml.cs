@@ -22,18 +22,22 @@ namespace OnlineShoppingWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Customer> customers;
-        List<Employee> employees;
+        List<Customer> customers = new List<Customer>();
+        List<Employee> employees = new List<Employee>();
         string username = "NBI";
         string password = "password";
+
         public MainWindow()
         {
-            customers = Store.Instance.customers;
-            employees = Store.Instance.employees;
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
+
+
         string customerPath = "SavedCustomers.csv";
         string employeePath = "SavedEmployees.csv";
+
+
         private void loginButton_Click(object sender, RoutedEventArgs e)
         {
             frontPage.Visibility = Visibility.Collapsed;
@@ -41,6 +45,7 @@ namespace OnlineShoppingWPF
             LoadCustomers();
             LoadEmployees();
         }
+
 
         private void loginButton2_Click(object sender, RoutedEventArgs e)
         {
@@ -51,7 +56,7 @@ namespace OnlineShoppingWPF
                 if (customer.Name == username && customer.Password == password)
                 {
 
-                    WindowStore windowStore = new WindowStore();
+                    WindowStore windowStore = new WindowStore(customer, customers);
                     windowStore.Show();
                 }
             }
@@ -62,14 +67,15 @@ namespace OnlineShoppingWPF
                     ProductManagmentWindow productManagmentWindow = new ProductManagmentWindow();
                     productManagmentWindow.Show();
                 }
-
-                    
             }
         }
-        private void browseAsGuestButton_Click(object sender, RoutedEventArgs e)
-        {
-            
+
+
+        private void browseAsGuestButton_Click(object sender, RoutedEventArgs e) 
+        { 
+
         }
+
 
         private void showAvailableCustomersButton_Click(object sender, RoutedEventArgs e)
         {
@@ -79,6 +85,7 @@ namespace OnlineShoppingWPF
             removeEmployeeButton.Visibility = Visibility.Collapsed;
             removeEmployeeLabel.Visibility = Visibility.Collapsed;
         }
+
 
         private void AvailableCustomersListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -94,6 +101,8 @@ namespace OnlineShoppingWPF
                 passwordBox.Password = string.Empty;
             }
         }
+
+
         private void removeCustomerButton_Click(object sender, RoutedEventArgs e)
         {
             Customer selectedCustomer = availableCustomersListBox.SelectedItem as Customer;
@@ -101,6 +110,8 @@ namespace OnlineShoppingWPF
             {
                 customers.Remove(selectedCustomer);
                 availableCustomersListBox.Items.Remove(selectedCustomer);
+                saveCustomer();
+                availableCustomersListBox.Items.Refresh();
 
                 removeCustomerLabel.Content = "Customer removed";
             }
@@ -109,6 +120,8 @@ namespace OnlineShoppingWPF
                 removeCustomerLabel.Content = "No customer selected";
             }
         }
+
+
         private void LoadCustomers()
         {
 
@@ -145,6 +158,8 @@ namespace OnlineShoppingWPF
                 }
             }
         }
+
+
         private void LoadEmployees()
         {
             employees.Clear();
@@ -165,6 +180,7 @@ namespace OnlineShoppingWPF
             }
         }
 
+
         private void registerButton_Click(object sender, RoutedEventArgs e)
         {
             RegisterWindow registerwindow = new RegisterWindow();
@@ -175,6 +191,8 @@ namespace OnlineShoppingWPF
             LoadEmployees();
             registerwindow.Show();
         }
+
+
         public void RegisterEmployee(string name, string password)
         {
             this.Name = name;
@@ -184,16 +202,16 @@ namespace OnlineShoppingWPF
             availableEmployeesListBox.Items.Add(newEmployee);
             availableEmployeesListBox.Items.Refresh();
         }
+
+
         public void RegisterCustomer(string name, string password, string email, string address, int postalCode, int money)
         {
-            this.Name = name;
-            this.password = password;
-
             Customer newCustomer = new Customer(name, password, email, address, postalCode, money);
             customers.Add(newCustomer);
             availableCustomersListBox.Items.Add(newCustomer);
             availableCustomersListBox.Items.Refresh();
         }
+
 
         private void AvailableEmployeesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -210,6 +228,7 @@ namespace OnlineShoppingWPF
             }
         }
 
+
         private void showAvailableEmployeesButton_Click(object sender, RoutedEventArgs e)
         {
             availableEmployeesListBox.Visibility = Visibility.Visible;
@@ -219,6 +238,7 @@ namespace OnlineShoppingWPF
             removeCustomerLabel.Visibility = Visibility.Collapsed;
         }
 
+
         private void removeEmployeeButton_Click(object sender, RoutedEventArgs e)
         {
             Employee selectedEmployee = availableEmployeesListBox.SelectedItem as Employee;
@@ -226,6 +246,8 @@ namespace OnlineShoppingWPF
             {
                 employees.Remove(selectedEmployee);
                 availableEmployeesListBox.Items.Remove(selectedEmployee);
+                saveEmployee();
+                availableEmployeesListBox.Items.Refresh();
 
                 removeEmployeeLabel.Content = "Employee removed";
             }
@@ -235,21 +257,37 @@ namespace OnlineShoppingWPF
             }
         }
 
+
         private void goBackButton_Click(object sender, RoutedEventArgs e)
         {
             loginScreenGrid.Visibility = Visibility.Collapsed;
             frontPage.Visibility = Visibility.Visible;
         }
 
+
         private void exitButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void saveCustomer()
         {
-            WindowStore windowStore = new WindowStore();
-            windowStore.Show();
+            using (StreamWriter writer = new StreamWriter(customerPath))
+            {
+                foreach (Customer customer in customers)
+                {
+                    writer.WriteLine(customer.GetCSV());
+                }
+            }
+        }
+        private void saveEmployee()
+        {
+            using (StreamWriter writer = new StreamWriter(employeePath))
+            {
+                foreach (Employee employee in employees)
+                {
+                    writer.WriteLine(employee.GetCSV());
+                }
+            }
         }
     }
 }

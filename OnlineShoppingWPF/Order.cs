@@ -8,20 +8,19 @@ using System.Windows;
 
 namespace OnlineShoppingWPF
 {
+    public enum OrderStatus
+    {
+        Processing,
+        Cancelled,
+        ReadyToSend,
+        Delivering,
+        Lost,
+        Delivered,
+        Returning,
+        Returned
+    }
     public class Order
     {
-        public enum OrderStatus
-        {
-            Processing,
-            Cancelled,
-            ReadyToSend,
-            Delivering,
-            Lost,
-            Delivered,
-            Returning,
-            Returned
-        }
-
         private static int orderCounter = 0001;
 
         public Order()
@@ -79,17 +78,44 @@ namespace OnlineShoppingWPF
 
         public bool Packaged()
         {
-            if (Status == OrderStatus.Processing)
-            {
-                Status = OrderStatus.ReadyToSend;
-                return true;
-            }
-            else
+            return SetStatus(OrderStatus.ReadyToSend);
+        }
+
+        public bool SetStatus(OrderStatus newStatus)
+        {
+            if (newStatus == OrderStatus.ReadyToSend && Status != OrderStatus.Processing && Status != OrderStatus.Lost)
             {
                 return false;
             }
+            if (newStatus == OrderStatus.Delivering && Status != OrderStatus.ReadyToSend)
+            {
+                return false;
+            }
+            if (newStatus == OrderStatus.Cancelled && Status != OrderStatus.ReadyToSend && Status != OrderStatus.Processing && Status != OrderStatus.Lost)
+            {
+                return false;
+            }
+            if (newStatus == OrderStatus.Lost && Status != OrderStatus.Delivering)
+            {
+                return false;
+            }
+            if (Status == OrderStatus.Delivered && newStatus != OrderStatus.Returning)
+            {
+                return false;
+            }
+            if (Status == OrderStatus.Returning && newStatus != OrderStatus.Returned)
+            {
+                return false;
+            }
+            if (Status == OrderStatus.Returned)
+            {
+                return false;
+            }
+            Status = newStatus;
+            return true;
         }
-        public void DisplayOrderDetails()
+        //Only a placeholder of a method we want to implement
+       /* public void DisplayOrderDetails()
         {
             Console.WriteLine("Order Number: " + OrderNumber);
             Console.WriteLine("Products in the order:");
@@ -98,7 +124,7 @@ namespace OnlineShoppingWPF
             {
                 Console.WriteLine("- " + product.Name + "," + "Quantity: " + product.Quantity + "Price: " + product.Price + "Category: " + product.Category + "ID: " + product.Id);
             }
-        }
+        }*/
         public void SaveToCSV(string filePath)
         {
             using (StreamWriter writer = new StreamWriter(filePath))

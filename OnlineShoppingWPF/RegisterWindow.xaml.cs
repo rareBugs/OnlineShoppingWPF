@@ -23,22 +23,31 @@ namespace OnlineShoppingWPF
         public MainWindow mainWindow { get; set; }
         public List<Employee> EmployeeList { get; set; }
         public List<Customer> CustomerList { get; set; }
+
         string customerPath = "SavedCustomers.csv";
         string employeePath = "SavedEmployees.csv";
+
+
         public RegisterWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            EmployeeList = new List<Employee>();
+            CustomerList = new List<Customer>();
         }
+
 
         private void customerButton_Click(object sender, RoutedEventArgs e)
         {
             customerRegistration.Visibility = Visibility.Visible;
         }
 
+
         private void employeeButton_Click(object sender, RoutedEventArgs e)
         {
             employeeRegistration.Visibility = Visibility.Visible;
         }
+
 
         private void employeeFinalRegisterButton_Click(object sender, RoutedEventArgs e)
         {
@@ -61,6 +70,8 @@ namespace OnlineShoppingWPF
             }
             Close();
         }
+
+
         private void customerFinalRegisterButton_Click(object sender, RoutedEventArgs e)
         {
             string postalCodeText = customerPostalCodeTextBox.Text;

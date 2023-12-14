@@ -2,24 +2,18 @@
 <Window x:Class="OnlineShoppingWPF.WindowAccount"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Account" Height="400" Width="600">
+        Title="Account" Height="330" Width="350">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="30*"/>
-            <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="10*"/>
             <RowDefinition Height="50*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
 
         <!-- Right side hidden, pops up with left side buttons -->
-        <Grid Grid.Row="2" Grid.Column="1" x:Name="customerRegistration" Background="gray" Visibility="Visible">
+        <Grid Grid.Row="1" Grid.Column="1" x:Name="customerRegistration" Background="LightGray" Visibility="Visible">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="1.5*"/>
@@ -33,18 +27,19 @@
                 <Label Margin="0 2" >Money deposit</Label>
             </StackPanel>
             <StackPanel Grid.Column="1">
-                <TextBox  x:Name="textBoxName" Margin="0 8 5 5" TextChanged="textBoxName_TextChanged"/>
-                <TextBox x:Name="textBoxPassword" Margin="0 8 5 5" TextChanged="textBoxPassword_TextChanged"/>
-                <TextBox x:Name="textBoxEmail" Margin="0 6 5 5" TextChanged="textBoxEmail_TextChanged"/>
-                <TextBox x:Name="textBoxAddress" Margin="0 7 5 5" TextChanged="textBoxAddress_TextChanged"/>
-                <TextBox x:Name="textBoxPostalCode" Margin="0 5 5 5" TextChanged="textBoxPostalCode_TextChanged"/>
-                <TextBox x:Name="textBoxMoney" Margin="0 5 5 5" TextChanged="textBoxMoney_TextChanged"/>
-                <Button x:Name="saveChanges" Margin="0 0 5 5" Click="saveChanges_Click" >Save changes</Button>
+                <TextBox  x:Name="textBoxName" Margin="0 8 5 5" />
+                <TextBox x:Name="textBoxPassword" Margin="0 8 5 5" />
+                <TextBox x:Name="textBoxEmail" Margin="0 6 5 5" />
+                <TextBox x:Name="textBoxAddress" Margin="0 7 5 5" />
+                <TextBox x:Name="textBoxPostalCode" Margin="0 5 5 5" />
+                <TextBox x:Name="textBoxMoney" Margin="0 5 5 5" />
+                <Button x:Name="saveChanges" Margin="0 0 5 5" Width="80" Click="saveChanges_Click" >Save changes</Button>
             </StackPanel>
+
+            <!-- Exit account button -->
+            <Button Content="Exit account page"
+        HorizontalAlignment="Left" VerticalAlignment="Top" Click="ButtonCloseProgram_Click" Grid.ColumnSpan="2" Margin="126,241,0,0"/>
         </Grid>
 
-        <!-- Exit account button -->
-        <Button Content="Exit account page" Grid.Column="1" Grid.Row="3"
-                HorizontalAlignment="Left" VerticalAlignment="Center" Click="ButtonCloseProgram_Click"/>
     </Grid>
 </Window>

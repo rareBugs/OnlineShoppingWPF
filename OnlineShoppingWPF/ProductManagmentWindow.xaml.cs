@@ -29,6 +29,7 @@ namespace OnlineShoppingWPF
         {
             Products = Store.Instance.products;
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
             //This is a Line!!!!!
 

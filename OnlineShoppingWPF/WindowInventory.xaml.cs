@@ -23,15 +23,18 @@ namespace OnlineShoppingWPF
         public WindowInventory()
         {
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
             OrderHistory.ItemsSource = Store.Instance.orders;
             InventoryStock.ItemsSource = Store.Instance.products;
+            ViewAvailableTransport.ItemsSource = Store.Instance.transportVehicles;
         }
 
         public void RefreshLists()
         {
             OrderHistory.Items.Refresh();
             InventoryStock.Items.Refresh();
+            ViewAvailableTransport.Items.Refresh();
         }
 
         private void InventoryStock_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -107,6 +110,56 @@ namespace OnlineShoppingWPF
                 else
                 {
                     MessageBox.Show("Products not in inventory");
+                }
+            }
+        }
+
+        private void UpdateVehicles_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (var vehicle in Store.Instance.transportVehicles)
+            {
+                int orderNumber = vehicle.OrderNumber;
+                DeliverStatus status = vehicle.TryDeliverOrder();
+                if (status != DeliverStatus.NoOrder)
+                {
+                    string progress = vehicle.Name + " " + status.ToString() + " " + orderNumber;
+                    DeliveryStatus.Items.Add(progress);
+                    if (vehicle.OrderNumber == 0)
+                    {
+                        foreach (var order in Store.Instance.orders)
+                        {
+                            if (order.OrderNumber == orderNumber)
+                            {
+                                if (status == DeliverStatus.Delivered)
+                                {
+                                    order.SetStatus(OrderStatus.Delivered);
+                                }
+                                else if (status == DeliverStatus.Lost)
+                                {
+                                    order.SetStatus(OrderStatus.Lost);
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            RefreshLists();
+        }
+
+        private void LoadOrder_Click(object sender, RoutedEventArgs e)
+        {
+            Order? order = OrderHistory.SelectedItem as Order;
+            TransportVehicle? vehicle = ViewAvailableTransport.SelectedItem as TransportVehicle;
+            if (order != null && vehicle != null)
+            {
+                if (vehicle.LoadOrder(order))
+                {
+                    RefreshLists();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to load order");
                 }
             }
         }

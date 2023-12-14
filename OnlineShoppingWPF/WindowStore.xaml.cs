@@ -19,25 +19,23 @@ namespace OnlineShoppingWPF
     /// </summary>
     public partial class WindowStore : Window
     {
-        public WindowStore()
+        private Customer loggedInCustomer;
+        private List<Customer> customers;
+
+        public WindowStore(Customer loggedInCustomer, List<Customer> customers)
         {
             InitializeComponent();
-
-            //Opens window in center of screen
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
-            //Vad menas?? """""@@@@@@@@@@@@"""==============
-
-            // Gets product data from CSV and displays in store
-
-            // listBoxProductViewer.ItemsSource = ReadDataFromCSV("asd");
-
+            this.loggedInCustomer = loggedInCustomer;
+            this.customers = customers;
         }
+
 
         private void OpenAccountFromStore_Click(object sender, RoutedEventArgs e)
         {
-            WindowAccount accountWindow = new WindowAccount();
-            accountWindow.Show();
+            WindowAccount windowAccount = new WindowAccount(loggedInCustomer, customers);
+            windowAccount.Show();
         }
 
 
@@ -47,21 +45,19 @@ namespace OnlineShoppingWPF
             cart.Show();
         }
 
-        // For reading CSV file to populate (aka display) the store with items
 
-        //private List<Product> ReadDataFromCSV(string filePath)
-        //{
-        //    // read
-        //    // return
-        //    // populate
-        //}
-
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            // right now this is just to clear the Search box, we're gonna need actual code to search for products.
+
+        }
+
+
+        private void ButtonSearch(object sender, RoutedEventArgs e)
+        {
             SearchBox.Clear();
         }
+
+
         private void ButtonCloseProgram_Click(object sender, RoutedEventArgs e)
         {
             Close();
