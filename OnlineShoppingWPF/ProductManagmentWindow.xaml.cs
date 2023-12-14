@@ -65,6 +65,8 @@ namespace OnlineShoppingWPF
             Products.Add(newProduct);
 
             RefreshProductListView();
+
+            listOfProducts.Items.Add($"{newProduct.Name}- Quantity: {newProduct.Quantity}");
         }
 
         private void RemoveProduct_Click(object sender, RoutedEventArgs e)
