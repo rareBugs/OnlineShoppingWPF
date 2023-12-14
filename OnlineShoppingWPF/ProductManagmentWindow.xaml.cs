@@ -24,21 +24,13 @@ namespace OnlineShoppingWPF
     /// </summary>
     public partial class ProductManagmentWindow : Window
     {
-        private List<Product> Products;
+        public List<Product> Products;
         public ProductManagmentWindow()
         {
             Products = Store.Instance.products;
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             RefreshProductListView();
-
-            //This is a Line!!!!!
-
-            /*products.Add(new Product("Alpha Industries", 1001, 4500, 15, "Jacket"));
-            products.Add(new Product("Dickes", 1002, 2200, 10, "Sweater"));
-            products.Add(new Product("Diesel", 1003, 1700, 25, "Jeans"));
-
-            RefreshProductListView();*/
         }
 
 
@@ -53,6 +45,7 @@ namespace OnlineShoppingWPF
 
             listOfProducts.ItemsSource = displayStrings;
         }
+
 
         private void AddProduct_Click(object sender, RoutedEventArgs e)
         {
@@ -69,6 +62,7 @@ namespace OnlineShoppingWPF
 
             //listOfProducts.Items.Add($"{newProduct.Name}- Quantity: {newProduct.Quantity}");
         }
+
 
         private void RemoveProduct_Click(object sender, RoutedEventArgs e)
         {
@@ -96,8 +90,8 @@ namespace OnlineShoppingWPF
             {
                 MessageBox.Show("Please select a product to remove.");
             }
-
         }
+
 
         private Product selectedProduct = null;
         private void listOfProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -149,7 +143,6 @@ namespace OnlineShoppingWPF
             {
                 MessageBox.Show($"Error Saving Products: ");
             }
-
         }
     }
 }

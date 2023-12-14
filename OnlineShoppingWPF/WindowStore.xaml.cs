@@ -21,6 +21,8 @@ namespace OnlineShoppingWPF
     {
         private Customer loggedInCustomer;
         private List<Customer> customers;
+        private List<Order> orders;
+        private List<Product> Products;
 
         public WindowStore(Customer loggedInCustomer, List<Customer> customers)
         {
@@ -29,6 +31,8 @@ namespace OnlineShoppingWPF
 
             this.loggedInCustomer = loggedInCustomer;
             this.customers = customers;
+
+            //this.Products = productManagmentWindow.Products;
         }
 
 

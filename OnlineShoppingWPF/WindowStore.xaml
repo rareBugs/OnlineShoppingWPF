@@ -64,18 +64,17 @@
 
         <!-- Main content area with scrollable product items -->
         <ScrollViewer Grid.Row="2" Grid.Column="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-            <ListBox x:Name="listBoxProductViewer" ItemsSource="{Binding}">
-                <ListBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <WrapPanel Orientation="Horizontal" />
-                    </ItemsPanelTemplate>
-                </ListBox.ItemsPanel>
+            <ListBox x:Name="listBoxProductViewer" ItemsSource="{Binding Products}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Grid>
-                            <Image Source="{Binding}" Stretch="UniformToFill" Height="100" />
-                            <TextBlock Text="{Binding}"/>
-                        </Grid>
+                        <Border BorderBrush="Gray" BorderThickness="1" Margin="5">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                                <TextBlock Text="{Binding Price, StringFormat='Price: {0:C}'}" />
+                                <TextBlock Text="{Binding Quantity, StringFormat='Quantity: {0}'}" />
+                                <TextBlock Text="{Binding Category}" />
+                            </StackPanel>
+                        </Border>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
