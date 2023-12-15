@@ -6,9 +6,16 @@
         xmlns:local="clr-namespace:OnlineShoppingWPF"
         mc:Ignorable="d"
         Title="WindowInventory" Height="450" Width="800">
-    <Grid Margin="0,0,0,-16">
-        <Label Content=" Order History" HorizontalAlignment="Left" Margin="43,37,0,0" VerticalAlignment="Top" Width="130" Height="26"/>
-        <ListView x:Name="OrderHistory" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="43,73,595,88" SelectionChanged="OrderHistory_SelectionChanged">
+    <Grid Height="450" VerticalAlignment="Top" HorizontalAlignment="Left" Width="800">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="91*"/>
+            <ColumnDefinition Width="195*"/>
+            <ColumnDefinition Width="395*"/>
+            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width="107*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="Order_History" Content=" Order History" Margin="0,0,155,390" FontFamily="Arial Black" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="117"/>
+        <ListView x:Name="OrderHistory" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,57,113,0" SelectionChanged="OrderHistory_SelectionChanged" Height="289" VerticalAlignment="Top" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="160">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding OrderNumber}" Header="Order" Width="50"/>
@@ -16,8 +23,16 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="Inventory Stock" HorizontalAlignment="Left" Margin="400,37,0,0" VerticalAlignment="Top" Width="101" Height="26"/>
-        <ListView x:Name="InventoryStock" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="400,73,205,88" SelectionChanged="InventoryStock_SelectionChanged">
+        <Label x:Name="Inventory_Stock" Content="Inventory Stock" Margin="0,209,327,0" FontFamily="Arial Black" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" Grid.Column="1" HorizontalAlignment="Right" Width="129" Height="26" VerticalAlignment="Top"/>
+        <ListView x:Name="InventoryStock" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,245,287,0" SelectionChanged="InventoryStock_SelectionChanged" RenderTransformOrigin="0.698,0.481" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Right" Width="190" Height="133" VerticalAlignment="Top">
+            <ListView.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.437"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.474"/>
+                </TransformGroup>
+            </ListView.RenderTransform>
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Id" Width="30"/>
@@ -26,36 +41,36 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="View Available Transport" Margin="606,37,24,0" VerticalAlignment="Top" Height="26"/>
-        <ListView x:Name="ViewAvailableTransport" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="606,73,54,217" SelectionChanged="ViewAvaibleTransport_SelectionChanged">
+        <Label Content="View Available Transport" Margin="145,19,56,0" FontFamily="Arial Black" Grid.Column="2" Height="26" VerticalAlignment="Top"/>
+        <ListView x:Name="ViewAvailableTransport" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,50,71,0" SelectionChanged="ViewAvaibleTransport_SelectionChanged" RenderTransformOrigin="0.528,0.521" Grid.Column="2" Height="276" VerticalAlignment="Top" HorizontalAlignment="Right" Width="179">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" Width="100"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding OrderNumber}" Header="OrderNumber" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding OrderNumber}" Header="OrderNumber"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content=" Delivery Status" Margin="606,238,72,176" Height="26"/>
-        <ListView x:Name="DeliveryStatus" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="606,274,54,88" SelectionChanged="DeliveryStatus_SelectionChanged">
+        <Label Content=" Delivery Status" Margin="344,0,0,395" FontFamily="Arial Black" Grid.Column="2" Grid.ColumnSpan="3" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="127"/>
+        <ListView x:Name="DeliveryStatus" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="344,50,0,0" SelectionChanged="DeliveryStatus_SelectionChanged" RenderTransformOrigin="0.5,0.5" Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Left" Width="127" Height="129" VerticalAlignment="Top">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn Header="Status"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="LoadOrder" Content="Load Order To Vehicle" Margin="450,379,210,43" Height="28" Click="LoadOrder_Click"/>
-        <ListView x:Name="OrderProducts" HorizontalAlignment="Left" Height="289" Margin="218,73,0,0" VerticalAlignment="Top" Width="164" d:ItemsSource="{d:SampleData ItemCount=5}">
+        <Button x:Name="LoadOrder" Content="Load Order To Vehicle" Margin="0,332,91,0" Click="LoadOrder_Click" Grid.Column="2" Height="28" VerticalAlignment="Top" HorizontalAlignment="Right" Width="140"/>
+        <ListView x:Name="OrderProducts" Margin="0,58,281,0" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" Height="139" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Right" Width="198">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Id" Width="30"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" Width="100"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Quantity}" Header="Quantity" Width="50"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Id"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Quantity}" Header="Quantity"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="Order Products" HorizontalAlignment="Left" Margin="218,37,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="PackageOrder" Content="Package Order" HorizontalAlignment="Left" Margin="343,379,0,0" VerticalAlignment="Top" Click="PackageOrder_Click"/>
-        <Button x:Name="UpdateVehicles" Content="Update Vehicles" HorizontalAlignment="Left" Margin="667,383,0,0" VerticalAlignment="Top" Click="UpdateVehicles_Click"/>
+        <Label x:Name="Order_Product" Content="Order Products" Margin="144,24,0,0" FontFamily="Arial Black" Grid.ColumnSpan="2" HorizontalAlignment="Left" Grid.Column="1" Height="26" VerticalAlignment="Top"/>
+        <Button x:Name="PackageOrder" Content="Package Order" Margin="0,351,191,0" Click="PackageOrder_Click" HorizontalAlignment="Right" Width="81" Height="20" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Button x:Name="UpdateVehicles" Content="Update Vehicles" Margin="344,187,0,0" Click="UpdateVehicles_Click" Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Left" Width="89" Height="20" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
